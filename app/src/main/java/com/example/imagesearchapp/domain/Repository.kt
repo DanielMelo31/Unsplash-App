@@ -6,7 +6,9 @@ import androidx.paging.liveData
 import com.example.imagesearchapp.data.model.UnsplashPagingSource
 import retrofit2.http.Query
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class Repository @Inject constructor(private val unsplashService: UnsplashService){
     fun getSearchResults(query: String) =
         Pager(
@@ -15,7 +17,6 @@ class Repository @Inject constructor(private val unsplashService: UnsplashServic
                 maxSize = 100,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = { UnsplashPagingSource(unsplashService, query)}
+            pagingSourceFactory = { UnsplashPagingSource(unsplashService, query) }
         ).liveData
-
 }

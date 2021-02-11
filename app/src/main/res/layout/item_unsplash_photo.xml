@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="250dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/futurePicture"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:src="@drawable/ic_launcher_background"/>
+        android:layout_height="250dp">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/futurePicture"
-        android:background="@drawable/labels_gradient" />
+        <ImageView
+            android:id="@+id/futurePicture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@drawable/ic_launcher_background" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:layout_margin="8dp"
-        android:layout_alignBottom="@+id/futurePicture"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:maxLines="1"
-        android:ellipsize="end"
-        android:drawablePadding="4dp"
-        app:drawableStartCompat="@drawable/ic_default_user"
-        tools:text="username" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/futurePicture"
+            android:background="@drawable/labels_gradient" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/futurePicture"
+            android:layout_margin="8dp"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:drawableStartCompat="@drawable/ic_default_user"
+            tools:text="username" />
+    </RelativeLayout>
+
+</LinearLayout>

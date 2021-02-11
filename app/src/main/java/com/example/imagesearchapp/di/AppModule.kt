@@ -24,6 +24,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUnsplashService(retrofit:Retrofit): UnsplashService =
+    fun provideUnsplashService(retrofit: Retrofit): UnsplashService =
         retrofit.create(UnsplashService::class.java)
 }

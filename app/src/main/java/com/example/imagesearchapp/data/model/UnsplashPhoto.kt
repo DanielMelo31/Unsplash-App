@@ -5,14 +5,14 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class UnsplashPhoto(
-        val id: String,
-        val description: String?,
-        val urls: UnspalsPhotoUrls,
-        val user: UnsplashPhotoUser
+    val id: String,
+    val description: String?,
+    val urls: UnsplashPhotoUrls,
+    val user: UnsplashPhotoUser
 ): Parcelable {
 
     @Parcelize
-    data class UnspalsPhotoUrls(
+    data class UnsplashPhotoUrls(
         val raw: String,
         val full: String,
         val regular: String,
@@ -24,5 +24,7 @@ data class UnsplashPhoto(
     data class UnsplashPhotoUser(
             val name: String,
             val username: String
-    ): Parcelable
+    ): Parcelable{
+        val attributionUrl get() = "https://unsplash.com/$username?utm_source=ImageSearchApp&utm_medium=referral"
+    }
 }
